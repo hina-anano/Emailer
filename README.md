@@ -1,4 +1,4 @@
-## Forked and Edited by Hina
+# Forked and Edited by Hina
 I've made it work in version 1.21.4 by switching the basic email sender API to a different API.
 
 # Emailer
