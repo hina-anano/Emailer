@@ -1,3 +1,6 @@
+## Forked and Edited by Hina
+I've made it work in version 1.21.4 by switching the basic email sender API to a different API.
+
 # Emailer
 Emailer is an advanced & premium-quality email sending plugin. It allows you to either connect to the default gmail smtp service or your own, and send real emails to players. Your can either send emails using HTML, or, if you're not familiar with it you can use plain text.
 
