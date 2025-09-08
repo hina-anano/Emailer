@@ -1,24 +1,22 @@
 package me.lagbug.emailer.spigot.utils;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.MimeMessage;
-
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
-
+import jakarta.mail.Message;
+import jakarta.mail.MessagingException;
+import jakarta.mail.Session;
+import jakarta.mail.Transport;
+import jakarta.mail.internet.MimeMessage;
 import me.lagbug.emailer.global.EmailAddress;
 import me.lagbug.emailer.global.EmailTemplate;
 import me.lagbug.emailer.spigot.Emailer;
 import me.lagbug.emailer.spigot.api.events.EmailSendEvent;
 import me.lagbug.emailer.spigot.common.utils.util.CommonUtils;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Email {
 
@@ -31,8 +29,8 @@ public class Email {
 	private EmailTemplate template;
 	private String playerName, code;
 	private final boolean finished = false;
-	
-	public Email(Session session, EmailAddress fromAddress,  EmailAddress[] toAddress) {
+
+    public Email(Session session, EmailAddress fromAddress, EmailAddress[] toAddress) {
 		this.toAddress = toAddress;
 		set(session, fromAddress);
 	}

@@ -25,18 +25,24 @@ public class VerifyCommand extends SpigotCommand {
 	@Override
 	public void onCommand(CommandSender sender, String[] args) {
 		// If the sender is not a player we return
-		if (!(sender instanceof Player)) {
+		if (!(sender instanceof Player player)) {
 			sender.sendMessage(plugin.getMessage("errors.onlyPlayers"));
 			return;
 		}
-		
-		Player player = (Player) sender;
-    	
-		// The code given by the player
+
+        // The code given by the player
 		String code = args[0];
 		
 		// The data of the pending request
-    	String[] data = plugin.getPending().get(player).split(";;");
+        String pending = plugin.getPending().get(player);
+
+        // By Hina: pending might be null while player hasn't typed /setemail first
+        if (pending == null) {
+            sender.sendMessage(plugin.getMessage("commands.verify.noPending"));
+            return;
+        }
+
+        String[] data = pending.split(";;");
 		String realCode = data[0];
 		EmailAddress email = new EmailAddress(data[1]);
     	

@@ -1,6 +1,6 @@
 package me.lagbug.emailer.global;
 
-import javax.mail.internet.InternetAddress;
+import jakarta.mail.internet.InternetAddress;
 
 @SuppressWarnings("serial")
 public class EmailAddress extends InternetAddress {

@@ -1,12 +1,10 @@
 package me.lagbug.emailer.spigot.api;
 
-import java.util.Map;
-
-import javax.mail.Session;
-
+import jakarta.mail.Session;
+import me.lagbug.emailer.spigot.Emailer;
 import org.bukkit.OfflinePlayer;
 
-import me.lagbug.emailer.spigot.Emailer;
+import java.util.Map;
 
 public class EmailerAPI {
 
@@ -17,7 +15,6 @@ public class EmailerAPI {
 	}
 	
 	public Session getSession() {
-		
 		return plugin.getSession();
 	}
 }

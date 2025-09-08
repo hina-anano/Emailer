@@ -9,6 +9,7 @@ commands:
     notVerified: "%prefix% The specified player (&b%player%&7) has not verified their account."
     force: "%prefix% Successfully force verified (&b%player%&7) &7with (&b%address%&7)."
     noEmail: "%prefix% No email has been sent to you, please use &b/setemail &7first."
+    noPending: "%prefix% You don't have an active email verification request."
   unverify:
     success: "%prefix% The specified player (&b%player%&7) is now un-verified."
   unsubscribe:

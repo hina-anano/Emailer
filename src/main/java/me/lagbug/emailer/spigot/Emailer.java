@@ -1,20 +1,8 @@
 package me.lagbug.emailer.spigot;
 
-import java.sql.SQLException;
-import java.util.*;
-
-import javax.mail.Authenticator;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.OfflinePlayer;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.Player;
-import org.bukkit.plugin.java.JavaPlugin;
-
+import jakarta.mail.Authenticator;
+import jakarta.mail.PasswordAuthentication;
+import jakarta.mail.Session;
 import me.lagbug.emailer.global.EmailAddress;
 import me.lagbug.emailer.global.EmailTemplate;
 import me.lagbug.emailer.global.enums.EmailType;
@@ -31,6 +19,19 @@ import me.lagbug.emailer.spigot.common.utils.util.CommonUtils;
 import me.lagbug.emailer.spigot.common.utils.util.FileUtils;
 import me.lagbug.emailer.spigot.events.AsyncPlayerChat;
 import me.lagbug.emailer.spigot.utils.PlayerDataCache;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.OfflinePlayer;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
+
+import java.sql.SQLException;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
 
 public class Emailer extends JavaPlugin {
 
@@ -42,12 +43,12 @@ public class Emailer extends JavaPlugin {
 	private final FileUtils fileUtils = new FileUtils();
 	private FileConfiguration configFile, langFile, templatesFile;
 
-	private final Properties properties = new Properties();
+    private final Properties properties = new Properties();
 	private Session session;
 	private EmailAddress email;
 	private final String user = "%%__USER__%%";
-	
-	public UpdateResult updateResult;
+
+    public UpdateResult updateResult;
 	public boolean mysql;
 
 	@Override
